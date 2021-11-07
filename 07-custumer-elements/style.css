@@ -1,0 +1,40 @@
+body {
+    background-color: white; /* #ffffff */ /* rgb(255,255,255) */
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.paragraph01 {
+    background-color: aqua;
+    border-style: solid;
+    border-width: 3px;
+}
+.paragraph02 {
+    background-color: white;
+    border-color: black;
+    border-style: dashed;
+    border-width: 3px;
+}
+.paragraph03 {
+    background-color: white;
+    border-top: 3px dashed;
+    border-right: 3px double;
+    border-bottom:  3px dotted;
+    border-left: 5px solid;
+}
+.paragraph04 {
+    background-color: white;
+    border-top: 3px solid red;
+    border-right: 3px solid violet;
+    border-bottom: 3px solid blue;
+    border-left: 3px solid green;
+}
+.paragraph05  {
+    background-color: beige;
+}
