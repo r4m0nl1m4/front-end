@@ -29,9 +29,10 @@ body {
     word-break:normal;
 }
 .table-container .table-head {
-    background-color:lightblue;
+    background-color:mediumblue;
     border-color:inherit;
     color:white;
+    font-weight: bold;
     text-align:center;
     vertical-align:middle
 }
