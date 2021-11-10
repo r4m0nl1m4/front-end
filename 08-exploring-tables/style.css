@@ -1,0 +1,50 @@
+body {
+    background-color: white; 
+}
+.table-container  {
+    border-collapse:collapse;
+    border-spacing:0;
+    font-family:Arial, Helvetica, sans-serif;
+    width:100%;
+}
+.table-container td { /* column  */
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+.table-container th { /* line */
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+.table-container .table-head {
+    background-color:lightblue;
+    border-color:inherit;
+    color:white;
+    text-align:center;
+    vertical-align:middle
+}
+.table-container .table-cell {
+    border-color:inherit;
+    vertical-align:middle
+}
+.background-color-lightgrey {
+    background-color:lightgrey;
+}
+.text-align-center {
+    text-align:center;
+}
+.text-align-left {
+    text-align:left;
+}
