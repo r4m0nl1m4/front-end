@@ -1,0 +1,25 @@
+div {
+    padding-top:10px;
+    text-align:center;          
+}
+span  {
+    background-color: green;
+    color: green;
+    display: inline-block;
+    padding: 10px;                
+}
+#block-inline-one {
+    width: 2%;
+}
+#block-inline-two {
+    width: 10%;
+}
+#block-inline-three {
+    width: 25%;
+}
+#block-inline-four {
+    width: 40%;
+}
+#block-inline-five {
+    width: 55%;
+}
