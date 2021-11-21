@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Form</title>
+  </head>
+  <body>
+    
+    <div id="product-form-container">
+    
+      <h1>Cadastro de Produtos</h1>
+      
+      <form action="" id="input-product-form" name="product-form">
+  
+        <label for="input-sku">SKU:</label>
+        <input id="input-sku" name="sku" placeholder="Enter your SKU here." type="text">
+  
+        <label for="input-product">Product:</label>
+        <input id="input-product" name="product" placeholder="Enter your product name here." type="text">
+  
+        <label for="input-product-weight">Weight:</label>
+        <input id="input-product-weight" name="product-weight" type="number">
+  
+        <label for="input-product-weight-unit">Unit of Measure:</label>
+        <select id="input-product-weight-unit" name="product-weight-unit">
+          <option value="kilogram">kilogram (kg)</option>
+          <option value="grams">grams (g)</option>
+          <option value="toned">toned (t)</option>
+        </select>
+  
+        <label for="input-product-width">Width (cm):</label>
+          <input id="input-product-width" name="product-width" type="number">
+
+        <label for="input-product-height">Height (cm):</label>
+        <input id="input-product-height" name="product-height" type="number">
+  
+        <label for="input-product-depth">Depth (cm):</label>
+        <input id="input-product-depth" name="product-depth" type="number">
+          
+        <input id="input-submit-button" name="submit-product-form-button" type="submit" value="Submit">
+  
+        <input id="input-reset-button" name="reset-product-form-button" type="reset" value="Reset">
+  
+      </form>
+
+    </div>
+  
+  </body>
+</html>

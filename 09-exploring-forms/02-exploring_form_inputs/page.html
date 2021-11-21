@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms Inputs Set</title>
+  </head>
+  <body>
+    
+    <form action="https://httpbin.org/post" method="POST">
+
+      <label for="input-text">Text:</label>
+      <input type="text" id="input-text" placeholder="Enter your first name" autofocus><br/><br/>
+      
+      <label for="input-text1">Read Only:</label>
+      <input type="text1" id="input-text1" value="Hello World" readonly><br/><br/>
+      
+      <label for="input-text2">Disabled:</label>
+      <input type="text" id="input-text2" value="Hello World" disabled><br/><br/>
+      
+      <label for="input-text3">Form box size and text max length:</label>
+      <input type="text" id="input-text3" size="40" maxlength="20"><br/><br/>
+      
+      <label for="input-pass">Password:</label>
+      <input type="password" id="input-pass"><br/><br/>
+      
+      <label>Only Choice:</label>
+      <input type="radio" name="genders" value="masculine" checked> Masculine
+      <input type="radio" name="genders" value="feminine"> Feminine
+      <input type="radio" name="genders" value="others"> Others <br/><br/>
+      
+      <label>Checkbox:</label>
+      <input type="checkbox" name="vehicles1" value="Motorcycle"> I have a motorcycle.
+      <input type="checkbox" name="vehicles2" value="Car"> I have a car. <br/><br/>
+      
+      <label for="input-submit-button">Submit Button:</label>
+      <input type="submit" value="Submit" id="input-submit-button"><br/><br/>
+
+      <label for="input-reset-button">Reset Button:</label>
+      <input type="reset" id="input-reset-button"><br/><br/>
+
+      <label for="input-generic-button">Generic Button:</label>
+      <input type="button" id="input-generic-button" onclick="alert('Hello World!')" value="Click me!"><br/><br/>
+      
+      <!-- HTML 5 Inputs -->
+  
+      <label for="input-file">Select a file:</label>
+      <input type="file" name="myFile" id="input-file"><br><br>
+
+      <label for="input-color-button">Select your favorite color:</label>
+      <input type="color" name="favorite-color" id="input-color-button"><br/><br/>
+      
+      <label for="input-date">Date:</label>
+      <input type="date" name="birthday" id="input-date" max="2021-01-12"><br/><br/>
+      
+      <label for="input-time">Date with Time:</label>
+      <input type="datetime-local" name="event" id="input-time"><br/><br/>
+
+      <label for="input-month">Month and Year:</label>
+      <input type="month" name="bdaymonth" id="input-month"><br><br>
+
+      <label for="input-week">Select the week: </label>
+      <input type="week" name="week_year" id="input-week"><br><br>
+
+      <label for="input-time">Time:</label>
+      <input type="time" name="usr_time" id="input-time"><br><br>
+
+      <label for="input-email">E-mail:</label>
+      <input type="email" name="email" id="input-email"><br><br>
+      
+      <label for="input-number">Number:</label>
+      <input type="number" name="quantity" min="0" max="100" step="10" id="input-number"><br><br>
+      
+      <label for="input-range">Range:</label>
+      <input type="range" name="points" min="0" max="10" id="input-range"><br><br>
+      
+      <label for="input-search">Search:</label>
+      <input type="search" name="search-form" id="input-search"><br><br>
+      
+      <label for="input-tel">Telephone:</label>
+      <input type="tel" name="phone" pattern="[0-9]{5}-[0-9]{4}" id="input-tel"><br><br>
+      
+      <label for="input-url">URL:</label>
+      <input type="url" name="homepage" id="input-url"><br><br>
+      
+      <label for="simple-selector">Simple Selector:</label>
+      <select name="vehicles" id="simple-selector">
+        <option value="boat">Boat</option>
+        <option value="bus">Bus</option>
+        <option value="car">Car</option>
+        <option value="jet-ski">Jet Ski</option>
+        <option value="motorcycle">Motorcycle</option>
+      </select><br><br>
+
+      <label for="selector-using-size">Selector using "size" attribute:</label>
+      <select size="2" name="vehicles" id="selector-using-size">
+        <option value="boat">Boat</option>
+        <option value="bus">Bus</option>
+        <option value="car">Car</option>
+        <option value="jet-ski">Jet Ski</option>
+        <option value="motorcycle">Motorcycle</option>
+      </select><br><br>
+
+      <label for="selector-using-size">Selector using "size" and "multiple" attributes:</label>
+      <select size="3" name="vehicles" id="selector-using-size" multiple>
+        <option value="boat">Boat</option>
+        <option value="bus">Bus</option>
+        <option value="car">Car</option>
+        <option value="jet-ski">Jet Ski</option>
+        <option value="motorcycle">Motorcycle</option>
+      </select><br><br>
+
+      <label for="data-with-predefined-suggestions">Data with predefined suggestions:</label>
+      <input type="text" list="vehicles"id="data-with-predefined-suggestions"/>
+      <datalist id="vehicles">
+        <option value="boat">Boat</option>
+        <option value="bus">Bus</option>
+        <option value="car">Car</option>
+        <option value="jet-ski">Jet Ski</option>
+        <option value="motorcycle">Motorcycle</option>
+      </datalist><br><br>
+
+      <label for="redaction">Text Area:</label><br>
+      <textarea name="" id="redaction" cols="30" rows="10">Write your text here.</textarea><br><br>
+
+    </form>
+  
+  </body>
+</html>
