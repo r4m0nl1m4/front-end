@@ -17,8 +17,12 @@ form {
     text-align:left;
     width: 80%;
  }
-input {
-    width: -webkit-fill-available; /* width: 100%; */
+input,
+select {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
 }
 label {
     font-family: Arial, Helvetica, sans-serif;
@@ -41,11 +45,10 @@ input[type=reset] {
     padding: 15px;
     width: 20%;
 }
-select {
+#input-product-weight-unit {
     background-color: white;
     border: 1px solid gray;
     border-radius: 4px;
     margin-bottom:15px;
     padding: 15px;
-    width: -webkit-fill-available; /* width: 100%; */
 }        
