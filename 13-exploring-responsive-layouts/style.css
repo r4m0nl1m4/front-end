@@ -64,6 +64,9 @@ article {
     height:auto;
     padding:20px;
 }
+article h1 {
+    margin-top:0px;
+}
 article p {
     padding-left:10px;
 }
@@ -109,8 +112,5 @@ footer a:link {
     }
     section nav ul {
         margin:0px;
-    }
-    article h1 {
-        margin-top:0px;
     }
 }
