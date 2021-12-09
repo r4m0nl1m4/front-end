@@ -1,0 +1,114 @@
+#top {
+    background-color:rgb(50,50,50);
+    padding-bottom:4px;
+    padding-left:4px;
+    padding-right:10px;
+    padding-top:4px;
+    text-align:right;
+}
+#top p {
+    display:none;
+}
+#emphasis {
+    background-color:blueviolet;
+    height:300px;
+    margin:0px;
+}
+body {
+    font-family:Arial,Helvetica,sans-serif;
+    margin:0%
+}
+section {
+    display:flex;
+}
+nav{
+    background-color:white;    
+    height:300px;
+    padding:20px;
+    float:left;
+    box-sizing:border-box;
+    flex:2; /*width: 20%;*/
+}
+nav > ul {
+    list-style-type:none;
+    padding:0px;
+}
+nav > ul > li{
+    border-top-color:#CCC;
+    border-top-style:solid;
+    border-top-width:1px;
+    list-style-type:none;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+a:link {
+    color:black;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
+article {
+    background-color:rgb(238, 238, 238);
+    box-sizing:border-box;
+    float:left;
+    flex:8; /*width: 80%;*/
+    height:auto;
+    padding:20px;
+}
+article p {
+    padding-left:10px;
+}
+article p:first-of-type::first-letter {    
+    font-size: 50px;
+}
+footer {
+    background-color:rgb(50,50,50);
+    padding:20px;
+    clear:both;
+    text-align:center;
+}
+footer a:link {
+    color:white;
+}
+
+@media only screen and (max-width: 728px) {
+    #top {
+        align-items:center;
+        background-color:black;
+        box-sizing:border-box;
+        display:flex;
+        height:40px;
+        padding:0px;
+    }
+    #top a,
+    #emphasis {
+        display:none;
+    }
+    #top p {
+        display:block;
+        color:white;
+        padding-left:10px;
+        margin:0px;
+    }
+    section {
+        display:flex;
+        flex-direction:column;
+        width:100%;
+    }
+    section nav {
+        padding:0px;
+    }
+    section nav ul {
+        margin:0px;
+    }
+    section nav ul li:hover{
+        background-color:lightgray;
+    }
+    section nav a {
+        padding-left:10px;
+    }
+    article h1 {
+        margin-top:0px;
+    }
+}

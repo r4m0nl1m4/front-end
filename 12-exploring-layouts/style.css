@@ -55,8 +55,10 @@ article p {
 }
 footer {
     background-color: rgb(50,50,50);
-    color: white;
     padding: 20px;
     clear: both;
     text-align: center;
+}
+footer a:link {
+    color: white;
 }
