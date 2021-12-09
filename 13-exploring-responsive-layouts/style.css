@@ -65,10 +65,13 @@ article {
     padding:20px;
 }
 article h1 {
-    margin-top:0px;
+    margin:0px;
 }
 article p {
     padding-left:10px;
+}
+article p:first-of-type {    
+    margin-top:0px;
 }
 article p:first-of-type::first-letter {    
     font-size: 50px;
