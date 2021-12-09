@@ -45,6 +45,14 @@ a:link {
     color:black;
     text-decoration:none;
 }
+nav ul li a {
+    padding-left:10px;
+}
+nav ul li:hover,
+nav ul li a:link:hover{
+    background-color:lightgray;
+    color:white;
+}
 a:hover {
     text-decoration:underline;
 }
@@ -101,12 +109,6 @@ footer a:link {
     }
     section nav ul {
         margin:0px;
-    }
-    section nav ul li:hover{
-        background-color:lightgray;
-    }
-    section nav a {
-        padding-left:10px;
     }
     article h1 {
         margin-top:0px;
