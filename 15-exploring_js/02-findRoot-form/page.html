@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Days to Years:Months:Days Form</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+      </script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+    <script src="./calculations.js" type="text/javascript"></script>
+    <script src="./events.js" type="text/javascript"></script>    
+  </head>
+  <body>
+    
+    <div id="findRoot-form-container">
+    
+      <h1 id="findRoot-form-title">Roots of Quadratic Equation $\,\,ax^2+bx+c=0$</h1>
+      
+      <form id="findRoot-form" name="form">
+        
+        <ul id="findRoot-form-inputs-container">
+          <li>
+            <label id="findRoot-form-input-a-label" for="a">a: </label>
+            <input id="findRoot-form-input-a" name="a" placeholder="1" type="number">
+          </li>
+          <li>
+            <label id="findRoot-form-input-b-label" for="b">b: </label>
+            <input id="findRoot-form-input-b" name="b" placeholder="2" type="number">
+          </li>
+          <li>
+            <label id="findRoot-form-input-c-label" for="c">c: </label>
+            <input id="findRoot-form-input-c" name="c" placeholder="-15" type="number">
+          </li>
+        </ul>
+        
+        <ul id="findRoot-form-inputs-controlers">
+          <li>
+            <input id="findRoot-form-input-submit_button" name="submit-form-button" type="submit" value="Submit">
+          </li>
+          <li>
+            <input id="findRoot-form-input-reset_button" name="reset-form-button" type="reset" value="Reset">
+          </li>
+        </ul>
+  
+      </form>
+
+      <br><br>
+
+      <div id="findRoot-form-output-container">
+        <label for="findRoot-form-output-roots" id="findRoot-form-output-roots-label">Roots: </label>
+        <ouput form="findRoot-form" id="findRoot-form-output-roots" name="roots"></output>
+      </div>
+
+    </div>
+  
+  </body>
+</html>

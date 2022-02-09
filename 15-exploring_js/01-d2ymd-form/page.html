@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Days to Years:Months:Days Form</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="./calculations.js" type="text/javascript"></script>
+    <script src="./events.js" type="text/javascript"></script>    
+  </head>
+  <body>
+    
+    <div id="d2ymd-form-container">
+    
+      <h1 id="d2ymd-form-title">Days to Years, Months and Days</h1>
+      
+      <form id="d2ymd-form" name="form">
+  
+        <ul id="d2ymd-form-inputs-container">
+          <li>
+            <label id="d2ymd-form-input-totalAgeInDays-label" for="d2ymd-form-input-totalAgeInDays">Total age in days:</label>
+            <input id="d2ymd-form-input-totalAgeInDays" name="totalAgeInDays" placeholder="400" type="number">
+          </li>
+        </ul>
+
+        <ul id="d2ymd-form-inputs-controlers">
+          <li>
+            <input id="d2ymd-form-input-submit_button" name="submit-form-button" type="submit" value="Submit">
+          </li>
+          <li>
+            <input id="d2ymd-form-input-reset_button" name="reset-form-button" type="reset" value="Reset">
+          </li>
+        </ul>
+  
+      </form>
+
+      <br><br>
+
+      <div id="d2ymd-form-output-container">
+        <label for="d2ymd-form-output-totalAgeInYearsMonthsDays" id="d2ymd-form-output-totalAgeInYearsMonthsDays-label">Total age in Years, Months and Days is: </label>
+        <ouput form="d2ymd-form" id="d2ymd-form-output-totalAgeInYearsMonthsDays" name="totalAgeInYearsMonthsDays"></output>
+      </div>
+
+    </div>
+  
+  </body>
+</html>
