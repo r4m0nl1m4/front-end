@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Geometric Area Form</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="./calculations.js" type="text/javascript"></script>
+    <script src="./events.js" type="text/javascript"></script>    
+  </head>
+  <body>
+    
+    <div id="squareArea-form-container">
+    
+      <h1 id="squareArea-form-title">Square Area</h1>
+      
+      <form id="squareArea-form" name="form">
+        
+        <ul id="squareArea-form-inputs-container">
+          <li>
+            <label id="squareArea-form-input-label" for="side">Side [cm]: </label>
+            <input id="squareArea-form-input" name="side" placeholder="5" type="number">
+          </li>
+          <li>
+        </ul>
+        
+        <ul id="squareArea-form-inputs-controlers">
+          <li>
+            <input id="squareArea-form-input-submit_button" name="submit-form-button" type="submit" value="Submit">
+          </li>
+          <li>
+            <input id="squareArea-form-input-reset_button" name="reset-form-button" type="reset" value="Reset">
+          </li>
+        </ul>
+  
+      </form>
+
+      <br><br>
+
+      <div id="squareArea-form-output-container">
+        <label for="squareArea-form-output" id="squareArea-form-output-label">Square Area [cm³]: </label>
+        <ouput form="squareArea-form" id="squareArea-form-output" name="squareArea"></output>
+      </div>
+
+    </div>
+
+    <div id="circleArea-form-container">
+    
+      <h1 id="circleArea-form-title">Circle Area</h1>
+      
+      <form id="circleArea-form" name="form">
+        
+        <ul id="circleArea-form-inputs-container">
+          <li>
+            <label id="circleArea-form-input-label" for="circleRadius">Circle Radius [cm]: </label>
+            <input id="circleArea-form-input" name="circleRadius" placeholder="2" type="number">
+          </li>
+          <li>
+        </ul>
+        
+        <ul id="circleArea-form-inputs-controlers">
+          <li>
+            <input id="circleArea-form-input-submit_button" name="submit-form-button" type="submit" value="Submit">
+          </li>
+          <li>
+            <input id="circleArea-form-input-reset_button" name="reset-form-button" type="reset" value="Reset">
+          </li>
+        </ul>
+  
+      </form>
+
+      <br><br>
+
+      <div id="circleArea-form-output-container">
+        <label for="circleArea-form-output" id="circleArea-form-output-label">Circle Area [cm²]: </label>
+        <ouput form="circleArea-form" id="circleArea-form-output" name="circleArea"></output>
+      </div>
+
+    </div>
+
+  </body>
+</html>
