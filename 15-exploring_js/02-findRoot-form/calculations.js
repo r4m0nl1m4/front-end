@@ -1,4 +1,4 @@
-function getQuadraticEquationRoot(a=1, b = 2, c = -15) {
+function getQuadraticEquationRoot(a=1, b = -1, c = -2) {
 
   var roots = [[0, 0], [0, 0]];
   var determinant = b * b - 4 * a * c;
