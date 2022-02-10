@@ -2,10 +2,6 @@
 
 jQuery for hierarchical checkboxes
 
-## DEMO
-
-[CodeSandbox](https://vceg4.csb.app/demo.html)
-
 ### USAGE:
 
 All the HTML elements with class hierarchy-checkboxes will be parsed into the hierarchical checkboxes.
