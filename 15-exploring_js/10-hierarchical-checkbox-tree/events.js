@@ -1,19 +1,19 @@
 jQuery(function(){
 
-  $(".hierarchy-checkboxes .hierarchy-root-child div div").hide();
+  $(".root .nodes div div").hide();
   
-  $(".hierarchy-checkboxes .hierarchy-root-child").attr("rel", getRelationship).appendTo("body");//.hide();
+  $(".root .nodes").attr("rel", getRelationship).appendTo("body");//.hide();
 
-  $(".hierarchy-checkboxes, .hierarchy-root-child .hierarchy-node").prepend('<div class="expand-collapse-button"></div>');
+  $(".root, .nodes .node").prepend('<span class="expand-collapse-button"></span>');
   
   $(".expand-collapse-button").on("click", expandAndCollapseByButton);
 
-  $(".hierarchy-root-label").on("click", expandAndCollapseRootNodeByLabel);
+  $(".root-label").on("click", expandAndCollapseRootNodeByLabel);
 
-  $(".hierarchy-node .hierarchy-label").on("click", expandAndCollapseSubNodesByLabel);
+  $(".node .node-label").on("click", expandAndCollapseSubNodesByLabel);
 
-  //$(".hierarchy-root-checkbox").on("change", selectAllNodes);
+  //$(".root-checkbox").on("change", selectAllNodes);
 
-  //$(".hierarchy-node .hierarchy-checkbox").on("click", selectAllSubNodes);
+  //$(".node .node-checkbox").on("click", selectAllSubNodes);
   
 });

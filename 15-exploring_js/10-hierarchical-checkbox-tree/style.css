@@ -1,34 +1,18 @@
-html,* { font-family: 'Inter'; }
-.container { 
-    margin: 150px auto;
-    max-width: 960px; 
-}
-
-.hierarchy-checkboxes {
-    display: inline-flex;
+.root {
     float: left;
     width: 200px;
     border: 1px solid transparent;
 }
-input.hierarchy-root-checkbox[type=checkbox]{
+.root input[type=checkbox],
+.nodes input[type=checkbox] {
     float: left;
     margin: 6px 5px 0 5px;
 }
-label.hierarchy-root-label{
-    font-weight: normal;
-    padding: 3px;
-    margin: 0;
-}
-label.hierarchy-root-label:hover,
-.hierarchy-root-child .hierarchy-label:hover{
-    background: #eee;
-}
-.hierarchy-checkboxes.child-expanded{
+.root.child-expanded{
     border: 1px solid #ccc;
     border-bottom: none;
-    display: inline-flex;
 }
-.hierarchy-root-child{
+.nodes {
     position: absolute;
     display: none;
     border: 1px solid #ccc;
@@ -37,42 +21,49 @@ label.hierarchy-root-label:hover,
     background: #fff;
     border-top: none;
 }
-.hierarchy-root-child .hierarchy-node{
+.nodes .node {
     clear: both;
-    display: block;
-    padding-left: 8px;
-    background: url("img/dashed-line-vertical.gif") repeat-y scroll left top rgba(0, 0, 0, 0);
-    margin-left: 9px;
-  
+    padding-left: 8px;  
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("img/dashed-line-vertical.gif"); 
+    background-position: left top;
+    background-repeat: repeat-y;
+    margin-left: 9px;  
 }
-.hierarchy-root-child .hierarchy-label{
-    background: url("img/dashed-line-horizontal.gif") no-repeat scroll 13px 12px rgba(0, 0, 0, 0);
-    margin: 0 0 0 -20px;
-    font-weight: normal;
-    padding-top: 5px;
+.root .root-label,
+.nodes .node-label {
     display:block;
+    font-weight: normal;
+    padding-top: 4px;    
+}
+.nodes .node-label {
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("img/dashed-line-horizontal.gif");
+    background-position: 13px 12px;
+    background-repeat: no-repeat;
+    margin: 0 0 0 -19px;
 }
 
-.hierarchy-checkboxes .expand-collapse-button,
-.hierarchy-root-child .hierarchy-node .expand-collapse-button{
-  display:block;
-  content:" ";
-  float:left;
-  background: url("img/expand.png") no-repeat scroll 0 4px transparent;
-  width:16px;
-  height:16px;
+.root .expand-collapse-button,
+.nodes .node .expand-collapse-button {
+  content: " ";
+  float: left;
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: url("img/expand.png");
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
   margin-top: 1px;
 }
-.hierarchy-checkboxes.child-expanded .expand-collapse-button,
-.hierarchy-root-child .hierarchy-node.child-expanded >.expand-collapse-button{
+.root.child-expanded .expand-collapse-button,
+.nodes .node.child-expanded >.expand-collapse-button {
   background: url("img/collapse.png") no-repeat scroll 0 4px transparent;
 }
-.hierarchy-root-child .hierarchy-node.leaf .expand-collapse-button{
+.nodes .node.leaf .expand-collapse-button {
   background:none;
   width:6px;
-}
-.hierarchy-root-child input[type=checkbox]{
-    float: left;
-    margin: 3px;
-    margin-top: 8px;
 }
