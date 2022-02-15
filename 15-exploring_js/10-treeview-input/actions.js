@@ -1,14 +1,14 @@
-function getRelationship() {
-  const $this = $(this);
-  var firstAncestor = $this.closest(".root").attr("rel");
-  $this.attr("rel", firstAncestor);
+function getTreeViewTag() {
+  return $(".root").attr("rel");
+}
+function getExpandCollapseButton() {
+  return '<button class="expand-collapse-button"></button>';
 }
 function expandAndCollapseByButton() {
   $(this).siblings(".node-label, .root-label").trigger("click");
 }
 function expandAndCollapseRootNodeByLabel() {
-  const $this = $(this);
-  const currentNode = $this.parent();
+  const currentNode = $(this).parent();
   const rootChild = $(".nodes[rel=" + currentNode.attr("rel") + "]");
   if (!currentNode.hasClass("child-expanded")) {
     currentNode.addClass("child-expanded");

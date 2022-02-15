@@ -1,10 +1,11 @@
 jQuery(function(){
 
-  $(".root .nodes div div").hide();
+  $(".root .nodes ul li").hide();
+  $(".root .nodes ul ul").hide();
   
-  $(".root .nodes").attr("rel", getRelationship).appendTo("body");//.hide();
+  $(".root .nodes").attr("rel", getTreeViewTag).appendTo("body");//.hide();
 
-  $(".root, .nodes .node").prepend('<span class="expand-collapse-button"></span>');
+  $(".root, .nodes .node").prepend(getExpandCollapseButton);
   
   $(".expand-collapse-button").on("click", expandAndCollapseByButton);
 
