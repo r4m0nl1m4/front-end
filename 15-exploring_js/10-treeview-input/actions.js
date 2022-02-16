@@ -7,25 +7,33 @@ function getExpandCollapseButton() {
 function expandAndCollapseByButton() {
   $(this).siblings(".node-label, .root-label").trigger("click");
 }
-function expandAndCollapseRootNodeByLabel() {
-  const currentNode = $(this).parent();
-  const rootChild = $(".nodes[rel=" + currentNode.attr("rel") + "]");
-  if (!currentNode.hasClass("child-expanded")) {
-    currentNode.addClass("child-expanded");
-    const thisPos = currentNode.offset();
-    rootChild.css({ left: thisPos.left, top: thisPos.top + currentNode.height() - 1 }).slideDown("fast");
-  } else {
-    rootChild.slideUp("fast", function () { currentNode.removeClass("child-expanded"); });
+function collapseNode(label) { //alert("collapse");
+  var node = label.parent();
+  if (label.attr('class') == "root-label") {
+    var rootChild = $(".nodes[rel=" + node.attr("rel") + "]");
+  } else if (label.attr('class') == "node-label") {
+    var rootChild = label.siblings(".node");
+  }
+  rootChild.slideUp("fast", function () { node.removeClass("child-expanded"); });
+}
+function expandNode(label) { //alert("expand");
+  var node = label.parent();
+  node.addClass("child-expanded");
+  if (label.attr('class') == "root-label") {
+    const rootChild = $(".nodes[rel=" + node.attr("rel") + "]");
+    const coordinates = node.offset();
+    rootChild.css({ left: coordinates.left, top: coordinates.top + node.height() - 1 }).slideDown("fast");
+  } else if (label.attr('class') == "node-label") {
+    label.siblings(".node").slideDown("fast");
   }
 }
-function expandAndCollapseSubNodesByLabel() {
-  const $this = $(this);
-  const currentNode = $this.parent();
+function expandAndCollapseByLabel() {
+  var label = $(this);
+  const currentNode = $(this).parent();
   if (!currentNode.hasClass("child-expanded")) {
-    currentNode.addClass("child-expanded");
-    $this.siblings(".node").slideDown("fast");
+    expandNode(label);
   } else {
-    $this.siblings(".node").slideUp("fast", function () { currentNode.removeClass("child-expanded"); });
+    collapseNode(label);
   }
 }
 function selectAllNodes() {

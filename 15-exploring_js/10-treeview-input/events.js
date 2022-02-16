@@ -5,13 +5,13 @@ jQuery(function(){
   
   $(".root .nodes").attr("rel", getTreeViewTag).appendTo("body");//.hide();
 
-  $(".root, .nodes .node").prepend(getExpandCollapseButton);
+  $(".root, .nodes ul").prepend(getExpandCollapseButton);
   
   $(".expand-collapse-button").on("click", expandAndCollapseByButton);
 
-  $(".root-label").on("click", expandAndCollapseRootNodeByLabel);
+  $(".root-label").on("click", expandAndCollapseByLabel);
 
-  $(".node .node-label").on("click", expandAndCollapseSubNodesByLabel);
+  $(".node .node-label").on("click", expandAndCollapseByLabel);
 
   //$(".root-checkbox").on("change", selectAllNodes);
 
