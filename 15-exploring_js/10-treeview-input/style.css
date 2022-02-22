@@ -1,44 +1,44 @@
 .root {
-    float: left;
-    width: 200px;
     border: 1px solid transparent;
+    float: left;   
     padding: 0px;
+    width: 200px;
 }
 .root input[type=checkbox],
 .nodes input[type=checkbox] {
     float: left;
     margin: 6px 5px 0 5px;
 }
-.root.child-expanded{
+.root.child-expanded {
     border: 1px solid #ccc;
     border-bottom: none;
     padding: 0px;
 }
 .nodes {
-    position: absolute;
-    display: none;
-    border: 1px solid #ccc;
-    width: 200px;
-    z-index: 55;
     background: #fff;
+    border: 1px solid #ccc;
     border-top: none;
+    display: none;
     margin: 0px;
-    padding: 0px;  
+    padding: 0px;
+    position: absolute;    
+    width: 200px;
+    z-index: 55;     
 }
-.nodes .node {
-    clear: both;
-    padding-left: 8px;  
+.nodes .node {  
     background-attachment: scroll;
     background-color: rgba(0, 0, 0, 0);
     background-image: url("img/dashed-line-vertical.gif"); 
     background-position: left top;
     background-repeat: repeat-y;
+    clear: both;
     list-style: none;
     margin-left: 9px;
+    padding-left: 8px;
 }
 .root .root-label,
 .nodes .node-label {
-    display:block;
+    display: block;
     font-weight: normal;
     padding-top: 4px;    
 }
@@ -50,26 +50,29 @@
     background-repeat: no-repeat;
     margin: 0 0 0 -19px;
 }
-
 .root .expand-collapse-button,
 .nodes .node .expand-collapse-button {
-  content: " ";
-  float: left;
   background-attachment: scroll;
   background-color: transparent;
   background-image: url("img/expand.png");
   background-position: 0 4px;
   background-repeat: no-repeat;
   border: 0px;
-  width: 16px;
+  content: " ";
+  float: left;
   height: 16px;
   margin-top: 1px;
+  width: 16px; 
 }
 .root.child-expanded .expand-collapse-button,
-.nodes .node.child-expanded >.expand-collapse-button {
-  background: url("img/collapse.png") no-repeat scroll 0 4px transparent;
+.nodes .node.child-expanded > .expand-collapse-button { 
+  background-attachment: scroll;
+  background-color: transparent;
+  background-image: url("img/collapse.png");
+  background-position: 0 4px;
+  background-repeat: no-repeat;
 }
 .nodes .node.leaf .expand-collapse-button {
-  background:none;
-  width:6px;
+  background: none;
+  width: 6px;
 }

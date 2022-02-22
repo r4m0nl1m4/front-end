@@ -4,28 +4,29 @@ function getTreeViewTag() {
 function getExpandCollapseButton() {
   return '<button class="expand-collapse-button"></button>';
 }
-function expandAndCollapseByButton() {
-  $(this).siblings(".node-label, .root-label").trigger("click");
-}
 function collapseNode(label) { //alert("collapse");
   var node = label.parent();
-  if (label.attr('class') == "root-label") {
+  var isRoot = ( label.attr('class') == "root-label" );
+  var isNode = ( label.attr('class') == "node-label" );
+  if (isRoot) {
     var rootChild = $(".nodes[rel=" + node.attr("rel") + "]");
-  } else if (label.attr('class') == "node-label") {
+  } else if (isNode) {
     var rootChild = label.siblings(".node");
   }
   rootChild.slideUp("fast", function () { node.removeClass("child-expanded"); });
 }
 function expandNode(label) { //alert("expand");
-  var node = label.parent();
-  node.addClass("child-expanded");
-  if (label.attr('class') == "root-label") {
+  var node = label.parent();  
+  var isRoot = ( label.attr('class') == "root-label" );
+  var isNode = ( label.attr('class') == "node-label" );
+  if (isRoot) {
     const rootChild = $(".nodes[rel=" + node.attr("rel") + "]");
     const coordinates = node.offset();
     rootChild.css({ left: coordinates.left, top: coordinates.top + node.height() - 1 }).slideDown("fast");
-  } else if (label.attr('class') == "node-label") {
+  } else if (isNode) {
     label.siblings(".node").slideDown("fast");
   }
+  node.addClass("child-expanded");
 }
 function expandAndCollapseByLabel() {
   var label = $(this);
@@ -35,6 +36,9 @@ function expandAndCollapseByLabel() {
   } else {
     collapseNode(label);
   }
+}
+function triggerSiblingsLabels() {
+  $(this).siblings(".root-label, .node-label").trigger("click");
 }
 function selectAllNodes() {
   const $this = $(this);

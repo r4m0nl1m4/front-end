@@ -1,0 +1,17 @@
+{
+  "name": "Tree Sample",
+  "node": [
+    { "id" : "1", "parent" : "#", "text" : "Root" },
+    { "id" : "2", "parent" : "#", "text" : "Node" },
+    { "id" : "3", "parent" : "#", "text" : "Node (Leaf)" },
+    { "id" : "4", "parent" : "#", "text" : "Node (Leaf)" },
+    { "id" : "5", "parent" : "#", "text" : "Node (Leaf)" },
+    { "id" : "6", "parent" : "2", "text" : "Node (Leaf)" },
+    { "id" : "7", "parent" : "2", "text" : "Node (Leaf)" },
+    { "id" : "8", "parent" : "2", "text" : "Node" },
+    { "id" : "9", "parent" : "2", "text" : "Node (Leaf)" },
+    { "id" : "10", "parent" : "8", "text" : "Node (Leaf)" },
+    { "id" : "11", "parent" : "8", "text" : "Node (Leaf)" },
+    { "id" : "12", "parent" : "8", "text" : "Node (Leaf)" }
+  ]
+}

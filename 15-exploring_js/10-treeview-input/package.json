@@ -1,8 +1,8 @@
 {
-  "name": "hierarchical-checkboxes",
+  "name": "treeview-input",
   "version": "1.0.0",
-  "description": "Hierarchical Checkboxes using JQuery",
-  "keywords": ["hierarchical", "checkbox"],
+  "description": "TreeView using JQuery",
+  "keywords": ["treeview", "checkbox"],
   "license": "MIT",
   "author": "r4m0nl1m4",
   "main": "/page.html",
