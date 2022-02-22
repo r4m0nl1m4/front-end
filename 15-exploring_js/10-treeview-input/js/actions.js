@@ -90,7 +90,7 @@ function insertTree(tree) {
   var count = Object.keys(tree.node).length; //alert(count);
   for(let i=0; i<count; i++) {
     if(tree.node[i].type == "root") {
-      $("body").html(
+      $(".tree").html(
           '<ul class="root" rel="test">'
         +   '<input class="root-checkbox" type="checkbox">'
         +   '<label class="root-label">' + tree.node[i].value + '</label>'
