@@ -1,6 +1,9 @@
 body {
     margin: 0px;
 }
+.tree {
+    display: inline-block;
+}
 .root {
     border: 1px solid transparent;
     float: left;
@@ -8,28 +11,15 @@ body {
     padding: 0px;
     width: 200px;
 }
-.root input[type=checkbox],
-.nodes input[type=checkbox] {
+.root input[type=checkbox] {
     float: left;
     margin: 6px 5px 0 5px;
 }
 .root.child-expanded {
     border: 1px solid #ccc;
-    border-bottom: none;
     padding: 0px;
 }
-.nodes {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    display: none;
-    margin: 0px;
-    padding: 0px;
-    position: absolute;    
-    width: 200px;
-    z-index: 55;     
-}
-.nodes .node {  
+.root .node {  
     background-attachment: scroll;
     background-color: rgba(0, 0, 0, 0);
     background-image: url("img/dashed-line-vertical.gif"); 
@@ -41,12 +31,12 @@ body {
     padding-left: 8px;
 }
 .root .root-label,
-.nodes .node-label {
+.root .node .node-label {
     display: block;
     font-weight: normal;
     padding-top: 4px;    
 }
-.nodes .node-label {
+.root .node .node-label {
     background-attachment: scroll;
     background-color: rgba(0, 0, 0, 0);
     background-image: url("img/dashed-line-horizontal.gif");
@@ -55,7 +45,7 @@ body {
     margin: 0 0 0 -19px;
 }
 .root .expand-collapse-button,
-.nodes .node .expand-collapse-button {
+.node .expand-collapse-button {
   background-attachment: scroll;
   background-color: transparent;
   background-image: url("img/expand.png");
@@ -68,15 +58,15 @@ body {
   margin-top: 1px;
   width: 16px; 
 }
-.root.child-expanded .expand-collapse-button,
-.nodes .node.child-expanded > .expand-collapse-button { 
+.root.child-expanded > .expand-collapse-button,
+.node.child-expanded > .expand-collapse-button { 
   background-attachment: scroll;
   background-color: transparent;
   background-image: url("img/collapse.png");
   background-position: 0 4px;
   background-repeat: no-repeat;
 }
-.nodes .node.leaf .expand-collapse-button {
+.root .node.leaf .expand-collapse-button {
   background: none;
   width: 6px;
 }

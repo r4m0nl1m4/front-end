@@ -3,10 +3,10 @@ function insertTree(tree) {
   for(let i=0; i<count; i++) {
     if(tree.node[i].type == "root") {
       $(".tree").html(
-          '<ul class="root" rel="test">'
+          '<ul id="1" class="root" rel="test">'
         +   '<input class="root-checkbox" type="checkbox">'
         +   '<label class="root-label">' + tree.node[i].value + '</label>'
-        +   '<ul id="1" class="nodes"></ul>'
+        + '</ul>'
       );
     } else if (tree.node[i].type == "node") {
       var parentID = "#" + tree.node[i].parent; //alert(parentID);
