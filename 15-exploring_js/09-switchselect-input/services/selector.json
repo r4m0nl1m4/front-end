@@ -1,0 +1,45 @@
+{
+  "name": "#occurrences-types",
+  "options": [
+    {
+      "content":"Energia Solar",
+      "id":14
+    },
+    {
+      "content":"Desligamento Scada",
+      "id":1
+    },
+    {
+      "content":"Emergência Médica",
+      "id":2
+    },
+    {
+      "content":"Falha no Fornecimento",
+      "id":3
+    },
+    {
+      "content":"Falha na Rede",
+      "id":4
+    },
+    {
+      "content":"Iluminação Pública",
+      "id":5
+    },
+    {
+      "content":"Meio Ambiente",
+      "id":6
+    },
+    {
+      "content":"Não Programada",
+      "id":7
+    },
+    {
+      "content":"Niveis de Tensão",
+      "id":8
+    },
+    {
+      "content":"Programada",
+      "id":9
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+html,
+body {
+  color: #4a4a4a;
+}
+label,
+select {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+label {
+  font-size: 14px;
+}
+.switchselect-container {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+select {
+  height: 90px;
+}
+input,
+select { 
+  font-size: 12px; 
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+.left-box,
+.middle-box,
+.right-box {
+  display: inline-block;
+}
+.left-box,
+.right-box {
+  min-width: 40%;
+}
+.middle-box {
+  min-width: 20%;
+}
+.left-button {
+  margin-bottom: 2.5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.right-button {
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 2.5px;
+}
+input[type=button] {
+  background-color: #A0BA82;
+  border: 1px solid gray;
+  padding-bottom: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 0px;
+}
+input[type=button]:hover {
+  background-color: #55812B;
+  color: white;
+}
