@@ -1,23 +1,23 @@
 {
   "name": "Tree Sample",
-  "node": [
-    { "type" : "root", "id" : "1", "parent" : "0", "value" : "Root" },
-    { "type" : "node", "id" : "2", "parent" : "1", "value" : "Node" },
-    { "type" : "leaf", "id" : "3", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "4", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "5", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "6", "parent" : "2", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "7", "parent" : "2", "value" : "Node (Leaf)" },
-    { "type" : "node", "id" : "8", "parent" : "2", "value" : "Node" },
-    { "type" : "leaf", "id" : "9", "parent" : "2", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "10", "parent" : "8", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "11", "parent" : "8", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "12", "parent" : "8", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "13", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "14", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "15", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "16", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "17", "parent" : "1", "value" : "Node (Leaf)" },
-    { "type" : "leaf", "id" : "18", "parent" : "1", "value" : "Node (Leaf)" }
+  "nodes": [
+    { "id" : "1", "parent" : "0", "value" : "Root" },
+    { "id" : "2", "parent" : "1", "value" : "Node" },
+    { "id" : "3", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "4", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "5", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "6", "parent" : "2", "value" : "Node (Leaf)" },
+    { "id" : "7", "parent" : "2", "value" : "Node (Leaf)" },
+    { "id" : "8", "parent" : "2", "value" : "Node" },
+    { "id" : "9", "parent" : "2", "value" : "Node (Leaf)" },
+    { "id" : "10", "parent" : "8", "value" : "Node (Leaf)" },
+    { "id" : "11", "parent" : "8", "value" : "Node (Leaf)" },
+    { "id" : "12", "parent" : "8", "value" : "Node (Leaf)" },
+    { "id" : "13", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "14", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "15", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "16", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "17", "parent" : "1", "value" : "Node (Leaf)" },
+    { "id" : "18", "parent" : "1", "value" : "Node (Leaf)" }
   ]
 }

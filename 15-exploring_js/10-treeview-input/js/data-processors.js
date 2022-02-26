@@ -1,40 +1,53 @@
-function insertTree(tree) {
-  var count = Object.keys(tree.node).length; //alert(count);
-  for(let i=0; i<count; i++) {
-    if(tree.node[i].type == "root") {
-      $(".tree").html(
-          '<ul id="1" class="root" rel="test">'
-        +   '<input class="root-checkbox" type="checkbox">'
-        +   '<label class="root-label">' + tree.node[i].value + '</label>'
-        + '</ul>'
-      );
-    } else if (tree.node[i].type == "node") {
-      var parentID = "#" + tree.node[i].parent; //alert(parentID);
-      var parentExist = $(parentID).length != 0; //alert(parentExist);
-      if(parentExist) { //alert(tree.node[i].id + " parent exist!");
-        $(parentID).append(
-            '<ul id="' + tree.node[i].id + '"class="node">'
-          +   '<input class="node-checkbox" type="checkbox">'
-          +   '<label class="node-label">' + tree.node[i].value + '</label>'
-          + '</ul>'
-        );
-      } else {
-        //alert("Error! Parent node not exist!");
-      }
-    } else if (tree.node[i].type == "leaf") {
-      var parentID = "#" + tree.node[i].parent; //alert(parentID);
-      var parentExist = $(parentID).length != 0; //alert(parentExist);
-      if(parentExist) { //alert(tree.node[i].id + " parent exist!");
-        $(parentID).append(
-            '<li id="' + tree.node[i].id + '"class="node leaf">'
-          +   '<input class="node-checkbox" type="checkbox">'
-          +   '<label class="node-label">' + tree.node[i].value + '</label>'
-          + '</li>'
-        );
-      } else {
-        //alert("Error! Parent node not exist!");
+function getType(nodes, node){
+  if (node.parent == 0) {
+    return "root";
+  } 
+  else {
+    var count = Object.keys(nodes).length; //alert(count);
+    for(let i=0; i<count; i++) {
+      if(node.id == nodes[i].parent) {
+        return "node";
       }
     }
+    return "leaf"
   }
-  //return true;
+}
+function insertRoot(node) {
+  $(".tree").html(
+    '<ul id="1" class="root" rel="test">'
+  +   '<input class="root-checkbox" type="checkbox">'
+  +   '<label class="root-label">' + node.value + '</label>'
+  + '</ul>'
+  );
+}
+function insertNode(node) {
+  $("#" + node.parent).append(
+      '<ul id="' + node.id + '"class="node">'
+    +   '<input class="node-checkbox" type="checkbox">'
+    +   '<label class="node-label">' + node.value + '</label>'
+    + '</ul>'
+  );
+}
+function insertLeaf(node) {
+  $("#" + node.parent).append(
+      '<li id="' + node.id + '"class="node leaf">'
+    +   '<input class="node-checkbox" type="checkbox">'
+    +   '<label class="node-label">' + node.value + '</label>'
+    + '</li>'
+  );
+}
+function insertTree(tree) {
+  var nodes = tree.nodes;
+  var count = Object.keys(nodes).length; //alert(count);
+  for(let i=0; i<count; i++) {
+    var node = nodes[i];
+    var type = getType(nodes, node);
+    if(type == "root") {
+      insertRoot(node);
+    } else if (type == "node") {
+      insertNode(node);
+    } else if (type == "leaf") {
+      insertLeaf(node);
+    }
+  }
 }
