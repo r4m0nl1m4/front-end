@@ -72,3 +72,10 @@ function selectAllSubNodes() {
   }
   $root.trigger("checkboxesUpdate", [rootChild.find(".node-checkbox:checked")]);
 }
+
+export { getTreeViewTag,
+         getExpandCollapseButton,
+         expandAndCollapseByLabel,
+         triggerSiblingsLabels,
+         selectAllNodes,
+         selectAllSubNodes };
