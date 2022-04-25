@@ -1,24 +1,30 @@
 import * as actions from './actions.js';
 
-function set() { //alert('set Events');
+function set(tree) { //alert('set Events');
 
   $(".root ul li").hide();
   $(".root ul ul").hide();
-  
-  $(".root").attr('rel', actions.getTreeViewTag);
 
-  $(".root, ul").prepend(actions.getExpandCollapseButton);
+  $(".node-label").on('click', actions.expandAndCollapse);
 
-  $(".root-label").on('click', actions.expandAndCollapseByLabel);
-  $(".root-label").trigger('click');
+  $(".root").children(".node-label").trigger('click');
 
-  $(".node .node-label").on('click', actions.expandAndCollapseByLabel);
-
-  $(".expand-collapse-button").on('click', actions.triggerSiblingsLabels);
+  $(".node-button").on('click', actions.triggerSiblingsLabels);
 
   //$(".root-checkbox").on('change', actions.selectAllNodes);
 
-  //$(".node .node-checkbox").on('click', actions.selectAllSubNodes); 
+  //$(".node-checkbox").on('click', actions.selectAllSubNodes);
+
+  $(".node-checkbox").on('click',function(){
+    for (let i=0; i<tree.NODES.length; i++) {
+      let isChecked = $("#"+tree.NODES[i].ID+" .node-checkbox").prop('checked');  
+      if(isChecked) {
+        $("#"+tree.NODES[i].ID+" .node-label").css({'color':'#5A8E22'});
+      } else {
+        $("#"+tree.NODES[i].ID+" .node-label").css({'color':'black'});
+      }
+    }
+  });
 
 }
 

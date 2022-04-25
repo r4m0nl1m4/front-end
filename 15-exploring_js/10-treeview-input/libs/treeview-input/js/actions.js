@@ -1,20 +1,18 @@
-function getTreeViewTag() { 
-  return $(".root").attr("rel");
-}
-function getExpandCollapseButton() {
-  return '<button class="expand-collapse-button"></button>';
-}
-function collapseNode(label) { //alert("collapse");
+function collapseNode(label) { //alert("collapse"); 
   var node = label.parent();
-  var rootChild = label.siblings(".node");
+  $(node).children(".node-button").empty();
+  $(node).children(".node-button").prepend("&#x25BA;");
+  var rootChild = label.siblings(".node, .leaf");
   rootChild.slideUp("fast", function () { node.removeClass("child-expanded"); });
 }
 function expandNode(label) { //alert("expand");
   var node = label.parent();
-  label.siblings(".node").slideDown("fast");
+  $(node).children(".node-button").empty();
+  $(node).children(".node-button").prepend("&#x25BC;");
+  label.siblings(".node, .leaf").slideDown("fast");
   node.addClass("child-expanded");
 }
-function expandAndCollapseByLabel() {
+function expandAndCollapse() {
   var label = $(this);
   const node = $(this).parent();
   if (node.hasClass("child-expanded")) {
@@ -24,27 +22,26 @@ function expandAndCollapseByLabel() {
   }
 }
 function triggerSiblingsLabels() {
-  $(this).siblings(".root-label, .node-label").trigger("click");
+  $(this).siblings(".node-label").trigger("click");
 }
 function selectAllNodes() {
-  const $this = $(this);
-  const node = $this.parent();
+  const node = $(this).parent();
   const rootChild = $(".root");
   rootChild.find("input.node-checkbox").prop("checked", $this.prop("checked"));
   node.trigger("checkboxesUpdate");
 }
 function uncheckAllSubNodes(currentCheckbox, currentNode, rootCheckbox) {
     // If unchecked uncheck all the ancestors
-    currentNode.parents(".node").children("input.node-checkbox").prop("checked", currentCheckbox.prop("checked"));
+    currentNode.parents(".node, .leaf").children("input.node-checkbox").prop("checked", currentCheckbox.prop("checked"));
     // also uncheck the root
     rootCheckbox.prop("checked", false);
 }
 function checkAllSubNodes(currentNode, rootCheckbox) {
-  const $parentNode = currentNode.parent(".node");
+  const $parentNode = currentNode.parent(".node, .leaf");
   const $parentNodeCheckbox = $parentNode.children("input.node-checkbox");
   // If checked check for the siblings state and check the parent if all siblings are checked too
-  const allCheckboxesInCurrentDepth = $parentNode.find(".node .node-checkbox").length;
-  const allCheckedCheckboxesInCurrentDepth = $parentNode.find(".node .node-checkbox:checked").length;
+  const allCheckboxesInCurrentDepth = $parentNode.find(".node .node-checkbox, .leaf .node-checkbox").length;
+  const allCheckedCheckboxesInCurrentDepth = $parentNode.find(".node .node-checkbox:checked, .leaf .node-checkbox:checked").length;
   // all nodes in and below siblings are checked
   if (allCheckboxesInCurrentDepth === allCheckedCheckboxesInCurrentDepth) {
     // check the parent
@@ -63,7 +60,7 @@ function selectAllSubNodes() {
   const $root = $(".root[rel=" + rel + "]");
   const rootCheckbox = $(".root[rel=" + rel + "] .root-checkbox");
   // take care of children | Easy one
-  currentCheckbox.siblings(".node").find("input.node-checkbox").prop("checked", currentCheckbox.prop("checked"));
+  currentCheckbox.siblings(".node, .leaf").find("input.node-checkbox").prop("checked", currentCheckbox.prop("checked"));
   //take care of parents | tough one
   if (!currentCheckbox.prop("checked")) {
     uncheckAllSubNodes(currentCheckbox, currentNode, rootCheckbox);
@@ -73,9 +70,7 @@ function selectAllSubNodes() {
   $root.trigger("checkboxesUpdate", [rootChild.find(".node-checkbox:checked")]);
 }
 
-export { getTreeViewTag,
-         getExpandCollapseButton,
-         expandAndCollapseByLabel,
+export { expandAndCollapse,
          triggerSiblingsLabels,
          selectAllNodes,
          selectAllSubNodes };
