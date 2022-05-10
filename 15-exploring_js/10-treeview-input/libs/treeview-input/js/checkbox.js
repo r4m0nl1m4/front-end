@@ -1,30 +1,6 @@
-function collapseNode(label) { //alert("collapse"); 
-  var node = label.parent();
-  $(node).children(".node-button").empty();
-  $(node).children(".node-button").prepend("&#x25BA;");
-  var rootChild = label.siblings(".node, .leaf");
-  rootChild.slideUp("fast", function () { node.removeClass("child-expanded"); });
-}
-function expandNode(label) { //alert("expand");
-  var node = label.parent();
-  $(node).children(".node-button").empty();
-  $(node).children(".node-button").prepend("&#x25BC;");
-  label.siblings(".node, .leaf").slideDown("fast");
-  node.addClass("child-expanded");
-}
-function expandAndCollapse() {
-  var label = $(this);
-  const node = $(this).parent();
-  if (node.hasClass("child-expanded")) {
-    collapseNode(label);
-  } else {
-    expandNode(label);
-  }
-}
-function triggerSiblingsLabels() {
-  $(this).siblings(".node-label").trigger("click");
-}
-function selectAllNodes() {
+import * as label from './label.js';
+
+function selectAll() {
   const node = $(this).parent();
   const rootChild = $(".root");
   rootChild.find("input.node-checkbox").prop("checked", $this.prop("checked"));
@@ -69,8 +45,16 @@ function selectAllSubNodes() {
   }
   $root.trigger("checkboxesUpdate", [rootChild.find(".node-checkbox:checked")]);
 }
+function setcolor(ID) {
+  let isChecked = $("#"+ID+" > .node-checkbox").prop('checked'); 
+  label.toogleColor(ID,isChecked);
+}
+function trigger() {
+  var NODE = $(this).parent();
+  var ID = NODE.attr("id");
+  setcolor(ID);
+}
 
-export { expandAndCollapse,
-         triggerSiblingsLabels,
-         selectAllNodes,
-         selectAllSubNodes };
+export { selectAll,
+         selectAllSubNodes,
+         trigger };

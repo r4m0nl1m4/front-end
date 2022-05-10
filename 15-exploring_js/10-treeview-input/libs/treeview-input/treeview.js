@@ -1,4 +1,5 @@
 import * as events from './js/events.js';
+import * as nodee from './js/node.js';
 
 function getNode(id,parent,value) {
   this.ID = id;
@@ -23,61 +24,7 @@ function getType(nodes, node) {
     return "leaf"
   }
 }
-function insertContainer(container) {
-  if(!$(container).length) {
-    $('body').html('<div class=' + container.substring(1) + '></div>');
-  } 
-  $(container).html('<div class="tree"></div>');
-}
-function insertRoot(node) {
-  $(".tree").html(
-    '<ul id="' + node.ID + '" class="root">'
-  +   '<button class="node-button" type="button"> &#x25BA; </button>'
-  +   '<label class="node-label">' + node.VALUE + '</label>'
-  + '</ul>'
-  );
-}
-function insertNode(node) {
-  $("#" + node.PARENT).append(
-      '<ul id="' + node.ID + '" class="node">'
-    +   '<div class="node-box">'
-    +     '<div class="node-box-row-1"> &ensp; </div>'
-    +     '<div class="node-box-row-2"> &ensp; </div>'
-    +   '</div>'
-    +   '<button class="node-button" type="button"> &#x25BA; </button>'
-    +   '<input class="node-checkbox" type="checkbox">'
-    +   '<label class="node-label">' + node.VALUE + '</label>'
-    + '</ul>'
-  );
-}
-function insertLeaf(node) {
-  $("#" + node.PARENT).append(
-      '<li id="' + node.ID + '" class="leaf">'
-    +   '<div class="node-box">'
-    +     '<div class="node-box-row-1"> &ensp; </div>'
-    +     '<div class="node-box-row-2"> &ensp; </div>'
-    +   '</div>'
-    +   '<input class="node-checkbox" type="checkbox">'
-    +   '<label class="node-label">' + node.VALUE + '</label>'
-    + '</li>'
-  );
-}
-function insertTree(tree, container = ".treeview-container") {
-  insertContainer(container);
-  var nodes = tree.NODES;
-  var count = Object.keys(nodes).length;  
-  for(let i=0; i<count; i++) {
-    var node = nodes[i];
-    var type = getType(nodes, node);    
-    if(type == "root") {
-      insertRoot(node);
-    } else if (type == "node") {
-      insertNode(node);
-    } else if (type == "leaf") {
-      insertLeaf(node);
-    }
-  }
-  $(".tree ul ul:last-child, .tree ul li:last-child").addClass("last");
+function setstyle() {  
   $(".tree").css({
     'align-content':'center',
     'display':'contents',
@@ -90,7 +37,10 @@ function insertTree(tree, container = ".treeview-container") {
     'border-width':'1px',
     'margin':'0px',
     'padding':'5px',
-    'width':'350px'
+    'width':'auto'
+  });
+  $(".root > .node-box").css({
+    'display':'none'
   });
   $(".root .node-button").css({
     'background-color':'transparent',
@@ -107,6 +57,9 @@ function insertTree(tree, container = ".treeview-container") {
     'padding':'0px',
     'vertical-align':'middle',
     'width':'16px'
+  });
+  $(".root > .node-checkbox").css({
+    'display':'none'
   });
   $(".node, .leaf").css({
     'border-left-color':'#ccc',
@@ -126,7 +79,7 @@ function insertTree(tree, container = ".treeview-container") {
   $(".node-box").css({
     'border-collapse':'collapse',
     'float':'left',
-    'height':'12px',
+    'height':'18px',
     'line-height':'normal',
     'margin-left':'-7px',
     'width':'9px'
@@ -141,7 +94,6 @@ function insertTree(tree, container = ".treeview-container") {
     'width':'100%'
   });
   $(".node .node-button").css({
-    'background-color':'transparent',
     'border':'0px',
     'content':'" "',
     'float':'left',
@@ -149,9 +101,9 @@ function insertTree(tree, container = ".treeview-container") {
     'height':'16px',
     'line-height':'normal',
     'margin-bottom':'0px',
-    'margin-left':'-3px',
+    'margin-left':'-2px',
     'margin-right':'-3.5px',
-    'margin-top':'-2px',
+    'margin-top':'1px',
     'padding':'0px',
     'vertical-align':'middle',
     'width':'16px'
@@ -161,11 +113,11 @@ function insertTree(tree, container = ".treeview-container") {
     'margin-bottom':'0px',
     'margin-left':'5px',
     'margin-right':'5px',
-    'margin-top':'0px'
+    'margin-top':'3px'
   });
   $(".node-label").css({
     'color':'black',
-    'display':'block',
+    'display':'contents',
     'font-size':'12px',
     'font-weight':'normal',
     'margin':'0px',
@@ -183,15 +135,6 @@ function insertTree(tree, container = ".treeview-container") {
     'padding-left':'8px',
     'padding-right':'0px',
     'padding-top':'0px'
-  });
-  $(".last > .node-box").css({
-    'border-collapse':'collapse',
-    'float':'left',
-    'height':'12px',
-    'line-height':'normal',
-    'margin-left':'-7px',
-    'margin-right':'1px',
-    'width':'9px'
   });
   $(".last > .node-box .node-box-row-1").css({
     'border-bottom':'1px dotted #ccc',
@@ -217,9 +160,39 @@ function insertTree(tree, container = ".treeview-container") {
     'vertical-align':'middle',
     'width':'16px'
   });
+  if($(window).width()<=1100) {
+    $(".root").css({
+      'width':'-webkit-fill-available'
+    });
+  }
+}
+function insert(LABEL, ID = "#input", tree) {
+  if(!$(ID+"-treeview").length) {
+    $('body').html(
+      '<div id=' + ID.substring(1) + '></div>'
+    + '<div class="tree" id="0"></div>'
+    );
+  } 
+  $(ID+"-treeview").html(
+     '<label id="tree-label" for="tree">' + LABEL + '</label>'
+  +  '<div class="tree" id="0"></div>'
+  );
+  var nodes = tree.NODES;
+  var count = Object.keys(nodes).length;  
+  for(let i=0; i<count; i++) {
+    var node = nodes[i];
+    var type = getType(nodes, node);
+    nodee.insert(node, type);
+  }
+  $(".tree ul ul:last-child, .root li:last-child, .root ul li:last-child").addClass("last");
+  setstyle();
   events.set(tree);
+}
+function reset() {
+  events.reset();
 }
 
 export { getNode, 
          getTree,
-         insertTree };
+         insert,
+         reset };

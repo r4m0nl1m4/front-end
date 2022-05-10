@@ -1,31 +1,30 @@
-import * as actions from './actions.js';
+import * as node from './node.js';
 
-function set(tree) { //alert('set Events');
+function set() {
 
   $(".root ul li").hide();
   $(".root ul ul").hide();
 
-  $(".node-label").on('click', actions.expandAndCollapse);
+  $(".node-button").on('click', node.button.toggle);
 
-  $(".root").children(".node-label").trigger('click');
+  $(".root").children(".node-button").trigger('click');
 
-  $(".node-button").on('click', actions.triggerSiblingsLabels);
+  $(".node-label").on('click', node.button.trigger);
+  
+  $(".node-checkbox").on('click', node.checkbox.trigger);
 
-  //$(".root-checkbox").on('change', actions.selectAllNodes);
+  //$(".node-checkbox").on('click', node.checkbox.selectAllSubNodes); 
 
-  //$(".node-checkbox").on('click', actions.selectAllSubNodes);
-
-  $(".node-checkbox").on('click',function(){
-    for (let i=0; i<tree.NODES.length; i++) {
-      let isChecked = $("#"+tree.NODES[i].ID+" .node-checkbox").prop('checked');  
-      if(isChecked) {
-        $("#"+tree.NODES[i].ID+" .node-label").css({'color':'#5A8E22'});
-      } else {
-        $("#"+tree.NODES[i].ID+" .node-label").css({'color':'black'});
-      }
-    }
-  });
+  //$(".root-checkbox").on('change', node.checkbox.selectAll);
 
 }
 
-export { set };
+function reset() {
+  $(".root ul, .root li").each(function(i) {
+    var ID = $(this).attr('id');
+    node.label.toogleColor(ID,false);
+  });
+}
+
+export { set, 
+         reset };
